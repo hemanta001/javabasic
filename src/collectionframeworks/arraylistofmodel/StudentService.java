@@ -51,6 +51,18 @@ public class StudentService {
     public void hashMapWithStudentObject() {
         Map<Integer, StudentModel> hashMapOfStudents = new HashMap<>();
 
+        //nested example
+        Map<String, Object> objectMap = new HashMap<>();
+
+        List<StudentModel> studentModelListL1 = new ArrayList<>();
+        objectMap.put("objectL1", studentModelListL1);
+        List<List<StudentModel>> studentModelListL2 = new ArrayList<>();
+        objectMap.put("objectL2", studentModelListL2);
+        List<List<List<StudentModel>>> studentModelListL3 = new ArrayList<>();
+        objectMap.put("objectL3", studentModelListL3);
+        List<List<List<List<StudentModel>>>> studentModelListL4 = new ArrayList<>();
+        objectMap.put("objectL4", studentModelListL4);
+
         hashMapOfStudents.put(100, new StudentModel());
 
         hashMapOfStudents.put(101, new StudentModel(1L, "Harry", 2, 'A'));
@@ -65,10 +77,10 @@ public class StudentService {
 
         StudentModel studentModelWith100Key = hashMapOfStudents.get(100);
         System.out.println("Details of student with 100 key: ");
-        System.out.println("Id :"+studentModelWith100Key.getId());
-        System.out.println("Name :"+studentModelWith100Key.getName());
-        System.out.println("Roll No :"+studentModelWith100Key.getRollNumber());
-        System.out.println("Section :"+studentModelWith100Key.getSection());
+        System.out.println("Id :" + studentModelWith100Key.getId());
+        System.out.println("Name :" + studentModelWith100Key.getName());
+        System.out.println("Roll No :" + studentModelWith100Key.getRollNumber());
+        System.out.println("Section :" + studentModelWith100Key.getSection());
 
         hashMapOfStudents.remove(101);
 
@@ -79,10 +91,10 @@ public class StudentService {
             System.out.println("Info of students with key " + key);
             StudentModel studentModelSample = hashMapOfStudents.get(key);
             System.out.println(studentModelSample);
-            System.out.println("Id :"+studentModelSample.getId());
-            System.out.println("Name :"+studentModelSample.getName());
-            System.out.println("Roll No :"+studentModelSample.getRollNumber());
-            System.out.println("Section :"+studentModelSample.getSection());
+            System.out.println("Id :" + studentModelSample.getId());
+            System.out.println("Name :" + studentModelSample.getName());
+            System.out.println("Roll No :" + studentModelSample.getRollNumber());
+            System.out.println("Section :" + studentModelSample.getSection());
 
         }
     }
