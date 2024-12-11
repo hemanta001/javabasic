@@ -63,8 +63,8 @@ public class CollectionFramework {
 
     public void hashMapExample() {
         Map<String, String> countryCodes = new HashMap<>();
-        Map<String, Integer> integerHashMap = new HashMap<>();
-        Map<Integer, String> integerStringMap = new HashMap<>();
+//        Map<String, Integer> integerHashMap = new HashMap<>();
+//        Map<Integer, String> integerStringMap = new HashMap<>();
 
 //        HashMap<String, String> countryCodesHash = new HashMap<>();
 
@@ -93,5 +93,61 @@ public class CollectionFramework {
         for (String key : countryCodes.keySet()) {
             System.out.println(key + " ->" + countryCodes.get(key));
         }
+    }
+
+
+    public void hashSetExample() {
+        HashSet<String> stringHashSet = new HashSet<>();
+        stringHashSet.add("Apple");
+        stringHashSet.add("Banana");
+        stringHashSet.add("Cherry");
+        stringHashSet.add("Apple");
+        System.out.println("HashSet: " + stringHashSet);
+    }
+
+    public void linkedHashSetExample() {
+        LinkedHashSet<String> stringLinkedHashSet = new LinkedHashSet<>();
+        stringLinkedHashSet.add("Apple");
+        stringLinkedHashSet.add("Banana");
+        stringLinkedHashSet.add("Cherry");
+        stringLinkedHashSet.add("Apple");
+        stringLinkedHashSet.remove("Banana");
+        System.out.println("LinkedHashSet: " + stringLinkedHashSet);
+    }
+
+    public void treeSetExample() {
+        TreeSet<Integer> integerTreeSet = new TreeSet<>();
+        integerTreeSet.add(5);
+        integerTreeSet.add(1);
+        integerTreeSet.add(0);
+        integerTreeSet.add(10);
+        integerTreeSet.add(40);
+        integerTreeSet.add(30);
+        integerTreeSet.remove(10);
+        System.out.println("TreeSet: " + integerTreeSet);
+    }
+
+    public void stackExample() {
+        Stack<Integer> stack = new Stack<>();
+        //add elements
+        stack.push(10);
+        stack.push(20);
+        stack.push(10);
+        stack.push(30);
+        stack.push(50);
+
+        //display the stack
+        System.out.println("Stack: " + stack);
+
+        //peek at the top element
+        System.out.println("Top element " + stack.peek());
+
+        System.out.println("Popped Element :" + stack.pop());
+
+        System.out.println("stack after pop: " + stack);
+
+        System.out.println("Is stack empty? " + stack.isEmpty());
+
+        System.out.println("Position of 20: " + stack.search(20));
     }
 }
